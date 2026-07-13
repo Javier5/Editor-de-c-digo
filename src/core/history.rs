@@ -1,0 +1,1 @@
+pub enum Command { Insert { row: usize, col: usize, text: String }, Delete { row: usize, start: usize, content: String }, } pub struct History { pub undo_stack: Vec<Command>, pub redo_stack: Vec<Command>, } impl History { pub fn new() -> Self { Self { undo_stack: Vec::new(), redo_stack: Vec::new() } } }
