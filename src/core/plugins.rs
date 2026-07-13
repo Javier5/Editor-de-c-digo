@@ -1,0 +1,1 @@
+pub trait Plugin { fn name(&self) -> &str; fn on_load(&self); } pub struct PluginManager { pub plugins: Vec<Box<dyn Plugin>>, } impl PluginManager { pub fn new() -> Self { Self { plugins: Vec::new() } } pub fn register(&mut self, plugin: Box<dyn Plugin>) { println!("Registrando plugin: {}", plugin.name()); plugin.on_load(); self.plugins.push(plugin); } }
