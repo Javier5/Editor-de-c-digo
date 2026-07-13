@@ -1,1 +1,1 @@
-pub struct Buffer { pub content: String, } impl Buffer { pub fn new() -> Self { Self { content: String::new() } } }
+pub struct Buffer { pub content: String, } impl Buffer { pub fn new() -> Self { Self { content: String::new() } } pub fn insert(&mut self, pos: usize, text: &str) { self.content.insert_str(pos, text); } pub fn delete(&mut self, pos: usize, len: usize) { if pos < self.content.len() { self.content.replace_range(pos..(pos + len).min(self.content.len()), ""); } } }
