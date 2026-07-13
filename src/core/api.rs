@@ -1,0 +1,1 @@
+use crate::core::buffer::Buffer; pub struct EditorAPI { pub buffer: Buffer, } impl EditorAPI { pub fn new() -> Self { Self { buffer: Buffer::new() } } pub fn handle_keypress(&mut self, key: &str) { /* Aquí conectaremos la UI con los comandos */ } pub fn get_view_data(&self) -> Vec<String> { self.buffer.lines.clone() } }
