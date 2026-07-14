@@ -60,7 +60,7 @@ impl eframe::App for EditorApp {
                     } else if self.active_panel == "Git" {
                         ui.label("Branch: main");
                         if ui.button("Sync Changes (Push)").clicked() {
-                            // Lógica de git posterior
+                            let output = std::process::Command::new("git").args(["push"]).output().expect("Failed to push"); ui.label("Push realizado!");
                         }
                     }
                 });
